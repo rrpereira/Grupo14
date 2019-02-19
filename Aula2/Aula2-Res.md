@@ -9,21 +9,21 @@ Quando utilizado o /dev/urandom a geração do numero pseudo-aleatório é imedi
 ## P1.2
 
 Após instalar o haveged a execução do comando   /dev/random foi imediata, uma vez que o haveged é um deamon que auxilia na coleta de entropia,sendo que quando não existe entropia suficiente para gerar o numero pseudo-aleatório o deamon irá escrever em /dev/random fornecendo os bits pseudo aleatórios necessários para a geração.
-No caso do comando /dev/urandam a geração do numero é imediata como anteriormente.
+No caso do comando /dev/urandom a geração do numero é imediata como anteriormente.
 
 ## P1.3
 
  1 - O output deste programa apenas contem letras e dígitos uma vez que a a função generateSecret() gera uma string aleatória com recurso a string.ascii_letter e string.digits que apenas contem letras e dígitos
 
- 2 - Para não limitar o output a letras e dígitos a função a generateSecret() deve ser alterada para utilizar string.printable que contem letras,dígitos,sinais de pontuação e espaços em branco.
+ 2 - Para não limitar o output a letras e dígitos a função a generateSecret() deve ser alterada para utilizar base64,sendo assim a função bas64.b64encode() deve ser aplicada ao resultado obtido em utils.generateRandomData(secretLength).
   
 ## P2.1
 
-A - Para a geração do segredo partilhado foi utilizado o seguinte comando *python createSharedSecret-app.py 8 5 1 key.pem*
+A - Para a geração do segredo partilhado foi utilizado o seguinte comando *python createSharedSecret-app.py 8 5 1 key.pem* e de seguida inserida a passphare da chave e o segredo "Agora temos um segredo extremamente confidencial".
 
 
 B - Para que seja possível recuperar o segredo podem ser utilizados os comandos *python recoverSecretFromComponents-app.py 5 1 key.crt* que recupera o segredo a partir de alguns dos intervenientes,defendidos inicialmente como 5(quorum).Ou utilizando o comando  *python recoverSecretAllFromComponents-app.py 8 1 key.crt* que recupera o segredo a partir de todos os intervenientes.
-
+O comando recoverSecretAllFromComponents deve ser utilizado quando o nivel de segurança associado ao segredo é elevado,uma vez que serão necessarios todos os intervenientes para descoficar o segredo.
 
 
 
@@ -46,10 +46,10 @@ def encrypt (message, etiqueta):
 def decrypt(ciphertext,mac,etiqueta,date):
     key= get_day_key(date)
     if(hmac(key,ciphertext)==mac):
-     message = decifragem(ciphertext,key)
-	 return message
+     mes = decifragem(ciphertext,key)
+	 return mes
     else:
-      print("ERROR: Authentication Failed")
+      print("Authentication Failed")
 ```
 
 ## P4.1
