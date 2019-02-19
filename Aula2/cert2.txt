@@ -1,0 +1,90 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            15:49:9a:8b:c2:09:e3:c8:58:38:28:d7:a9:e0:97:68
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C = ES, O = FNMT-RCM, OU = AC Componentes Inform\C3\A1ticos
+        Validity
+            Not Before: Nov 25 12:04:39 2016 GMT
+            Not After : Nov 25 12:04:39 2022 GMT
+        Subject: C = ES, O = F\C3\81BRICA NACIONAL DE MONEDA Y TIMBRE-REAL CASA DE LA MONEDA, OU = CERES, 2.5.4.97 = VATES-Q2826004J, CN = AUTORIDAD DE SELLADO DE TIEMPO FNMT-RCM - TSU 2016
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (3072 bit)
+                Modulus:
+                    00:ac:06:c8:a9:cc:43:32:0a:6a:5a:c5:56:2f:7a:
+                    44:07:25:df:b6:f9:c4:f4:9f:3f:16:46:fd:ee:0e:
+                    79:2e:45:9d:a9:c8:8e:62:60:31:9f:8e:7e:fe:e8:
+                    46:1b:2c:a3:3f:67:e8:6c:e4:b2:5d:ac:c7:48:d7:
+                    61:d9:34:1b:21:60:f8:cf:24:7a:04:50:5d:f7:ec:
+                    9d:98:e9:96:10:13:c9:4d:99:e5:bf:1b:dd:1d:c7:
+                    25:8c:20:a9:7e:75:b4:7b:48:12:f1:6a:1f:cc:3b:
+                    e0:97:88:8d:25:c1:f8:7e:23:0d:3b:2d:07:34:7b:
+                    e7:aa:43:87:60:76:e2:3b:4a:28:3c:24:42:76:89:
+                    0f:de:4d:f6:0d:16:80:db:87:9e:93:4c:e3:c9:67:
+                    f0:69:5e:5d:15:5c:1d:08:01:69:87:2c:58:29:4b:
+                    44:e8:d4:2d:84:3d:0c:77:09:bd:46:91:d2:6a:f4:
+                    48:4b:8d:3d:8a:ac:ee:d0:8b:82:ca:ab:2e:90:98:
+                    1b:b2:19:11:2e:cd:33:fa:34:2b:ad:45:b5:19:a4:
+                    b2:56:15:7f:a7:91:5b:bc:f8:97:3e:1c:93:50:c6:
+                    7d:9f:50:3f:d3:85:f3:6d:d2:9d:cc:2c:59:09:84:
+                    59:b5:18:a8:6b:a1:37:fd:a8:c9:47:7e:c8:7e:26:
+                    71:7d:30:1f:c3:02:38:99:72:2f:5b:18:05:c4:33:
+                    23:26:46:c9:f1:4a:71:2f:fe:0b:74:fd:a6:a9:7e:
+                    01:a2:3b:cc:dd:7d:bb:60:65:86:c3:af:23:8b:cf:
+                    81:41:98:da:f5:7e:db:e7:13:58:11:8c:eb:b9:68:
+                    ab:69:a0:b9:da:b1:a6:1c:9b:6f:2b:c9:96:fb:78:
+                    a8:71:fd:97:fe:e2:78:d3:6c:81:6a:77:00:6c:dc:
+                    62:67:3d:de:08:98:21:6d:dd:f8:1e:d6:d7:0c:5e:
+                    dd:39:9a:8a:cf:f9:3a:96:45:cf:62:bd:61:11:5a:
+                    b2:ed:98:0f:40:8f:92:64:31:c9
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Authority Information Access: 
+                OCSP - URI:http://ocspcomp.cert.fnmt.es/ocsp/OcspResponder
+                CA Issuers - URI:http://www.cert.fnmt.es/certs/ACCOMP.crt
+
+            X509v3 Certificate Policies: 
+                Policy: 1.3.6.1.4.1.5734.3.9.20
+                  CPS: http://www.cert.fnmt.es/dpcs/
+                  User Notice:
+                    Explicit Text: Certificado para el Servicio Cualificado de Sellado de Tiempo de la FNMT-RCM. Sujeto a las condiciones de uso expuestas en la DPC de la FNMT-RCM (C/Jorge Juan 106-28009-Madrid-España)
+
+            X509v3 Key Usage: critical
+                Digital Signature, Non Repudiation
+            X509v3 Extended Key Usage: critical
+                Time Stamping
+            X509v3 Subject Key Identifier: 
+                A1:F6:70:6D:CC:7E:8D:3B:CC:3C:93:E2:DE:94:9B:B1:45:9F:1F:9F
+            X509v3 Private Key Usage Period: 
+                Not Before: Nov 25 12:04:40 2016 GMT, Not After: Nov 25 12:04:39 2021 GMT
+            qcStatements: 
+                0..0......F..0......F.....0......F..0......F...0r.....F..0h02.,https://www.cert.fnmt.es/pds/PDS_COMP_es.pdf..es02.,https://www.cert.fnmt.es/pds/PDS_COMP_en.pdf..en
+            X509v3 Authority Key Identifier: 
+                keyid:19:F8:58:2F:14:D6:A6:CC:9B:04:98:08:0D:4C:D7:AB:00:A7:83:65
+
+            X509v3 CRL Distribution Points: 
+
+                Full Name:
+                  URI:ldap://ldapcomp.cert.fnmt.es/CN=CRL1,OU=AC%20Componentes%20Informaticos,O=FNMT-RCM,C=ES?certificateRevocationList;binary?base?objectclass=cRLDistributionPoint
+                  URI:http://www.cert.fnmt.es/crlscomp/CRL1.crl
+
+    Signature Algorithm: sha256WithRSAEncryption
+         78:93:31:2f:3d:f2:8f:0c:ac:1a:67:3f:10:e7:1c:af:fd:2e:
+         8d:f4:b5:14:72:4b:a7:25:2f:6f:c8:01:7e:d2:08:87:f5:37:
+         af:11:6c:42:93:4a:07:c2:1b:b1:70:84:54:eb:9d:24:f1:27:
+         08:89:37:5c:eb:c5:69:e6:5a:49:5e:20:c2:8e:c2:3a:96:b1:
+         72:ff:6a:5c:4b:08:8f:73:fd:f8:90:5e:4d:1d:44:e0:02:5b:
+         3f:f1:ba:2a:e3:7d:41:29:65:68:7a:2e:9e:50:93:45:72:6e:
+         60:1e:22:f3:36:64:17:52:79:c9:2a:f2:a4:fd:74:a1:29:0d:
+         b6:d8:ab:f2:c0:a9:68:a9:8a:92:67:e5:6e:7b:02:0b:a5:4d:
+         7d:94:c0:33:49:6f:49:79:89:81:af:58:92:d6:01:10:88:7d:
+         8b:90:3c:79:59:2e:07:0a:af:d1:94:19:56:90:27:3b:13:29:
+         7c:65:da:47:38:34:f2:79:d4:64:b2:0c:ad:10:28:cc:b8:12:
+         0e:08:ec:c3:07:79:06:8b:42:01:bd:57:f8:c8:c8:2d:b9:06:
+         3e:61:95:56:d3:42:d4:cf:b6:0e:a4:dd:9a:19:38:f6:35:50:
+         0f:27:cb:e0:73:12:02:0d:4a:07:36:7f:d0:a2:fb:94:a1:29:
+         be:5f:2b:21
