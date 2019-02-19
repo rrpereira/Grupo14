@@ -1,3 +1,5 @@
+#Aula2-TP
+
 ## P1.1
 
 
@@ -15,27 +17,43 @@ No caso do comando /dev/urandom a geração do numero é imediata como anteriorm
 
  1 - O output deste programa apenas contem letras e dígitos uma vez que a a função generateSecret() gera uma string aleatória com recurso a string.ascii_letter e string.digits que apenas contem letras e dígitos
 
- 2 - Para não limitar o output a letras e dígitos a função a generateSecret() deve ser alterada para utilizar base64,sendo assim a função bas64.b64encode() deve ser aplicada ao resultado obtido em utils.generateRandomData(secretLength).
+ 2 - Para não limitar o output a letras e dígitos a função a generateSecret() deve ser alterada para utilizar base64,sendo assim a função bas64.b64encode() deve ser aplicada ao resultado obtido em utils.generateRandomData(secretLength).Outra alternativa seria  alterar a função generateSecret() para utilizar string.printable que contem letras,dígitos e sinais de pontuação.
   
 ## P2.1
 
-A - Para a geração do segredo partilhado foi utilizado o seguinte comando *python createSharedSecret-app.py 8 5 1 key.pem* e de seguida inserida a passphare da chave e o segredo "Agora temos um segredo extremamente confidencial".
+A - Para a geração do segredo partilhado foi utilizado o seguinte comando 
+
+```
+ python createSharedSecret-app.py 8 5 1 key.pem*
+```
+e de seguida inserida a passphare da chave criada e o segredo "Agora temos um segredo extremamente confidencial".Assim o segredo é partilhado entre os 8 intervenientes sendo que são necessários apenas 5 dos intervenientes para recuperar o segredo.
 
 
-B - Para que seja possível recuperar o segredo podem ser utilizados os comandos *python recoverSecretFromComponents-app.py 5 1 key.crt* que recupera o segredo a partir de alguns dos intervenientes,defendidos inicialmente como 5(quorum).Ou utilizando o comando  *python recoverSecretAllFromComponents-app.py 8 1 key.crt* que recupera o segredo a partir de todos os intervenientes.
-O comando recoverSecretAllFromComponents deve ser utilizado quando o nivel de segurança associado ao segredo é elevado,uma vez que serão necessarios todos os intervenientes para descoficar o segredo.
+B - Para que seja possível recuperar o segredo podem ser utilizados os comandos 
+
+```
+python recoverSecretFromComponents-app.py 5 1 key.crt
+```
+ que recupera o segredo a partir de alguns dos intervenientes,defendidos inicialmente como 5(quorum),o numero de intervenientes poderá ser maior do que o quorum mas nunca menor para que o segredo seja recuperado.
+
+ Tambem pode ser utilizando o comando 
+ 
+ ``` python recoverSecretAllFromComponents-app.py 8 1 key.crt
+ ```
+  que recupera o segredo a partir de todos os intervenientes.
+O comando recoverSecretAllFromComponents deve ser utilizado quando o nível de segurança associado ao segredo é elevado,uma vez que serão necessários todos os intervenientes para o recuperar.
 
 
 
 ## P3.1
 
 A empresa deveria utilizar o esquema de Authenticated Encryption Encrypt-then-Mac que garante a integridade e autenticidade do texto limpo bem como do criptograma.Outra opção seria utilizar modes de operaçao de algumas cifras que oferecem garantias confidencialidade,integridade e autenticidade como é o caso do Galois Counter Mode (GCM) do AES.
-Em baixo mostramos o algoritmo que utiliza o esquema Encrypt-and-Mac utilizando as funçoes defenidas pela API.Foi também defenida uma funçao auxiliar get_day_key(day) que recebe um dia do ano no formato "ano.mes.dia" e retorna a chave gerada para esse dia.
+Em baixo mostramos o algoritmo que utiliza o esquema Encrypt-and-Mac utilizando as funçoes defenidas pela API.Foi também definida uma função auxiliar get_day_key(day) que recebe um dia do ano no formato "ano.mes.dia" e retorna a chave gerada para esse dia.
 
 ```python
 def encrypt (message, etiqueta):
-    ciphertext = cifragem(mensagem)
     key = get_day_key(today)
+    ciphertext = cifragem(mensagem)
     mac = hmac(key,cyphertext)
     obj = {'mess' :ciphertext ,
 		'MAC' :mac,
@@ -47,9 +65,9 @@ def decrypt(ciphertext,mac,etiqueta,date):
     key= get_day_key(date)
     if(hmac(key,ciphertext)==mac):
      mes = decifragem(ciphertext,key)
-	 return mes
     else:
       print("Authentication Failed")
+    return mes
 ```
 
 ## P4.1
@@ -59,13 +77,13 @@ As Entidades de Certificação que foram designadas ao nosso grupo foi a Direcci
  	Dirección General de la Policía
  	Signature Algorithm: sha256WithRSAEncryption
  	Public Key Algorithm: rsaEncryption
-     Public-Key: 4096 bit
+    Public-Key: 4096 bit
 
 
  	Fábrica Nacional de Moneda y Timbre
  	Signature Algorithm: sha256WithRSAEncryption
  	Public Key Algorithm: rsaEncryption
-     Public-Key: 3072 bit
+    Public-Key: 3072 bit
 
 Os tamanhos de chaves utilizados por ambas as entidades são adequados para um futuro próximo,no entanto a longo prazo o tamanho de chave utilizado no RSA poderá ter de ser alterado até um máximo de 15360 bits que segundo o NIST contem o mesmo nível de segurança que uma chave simétrica de 256 bits.
 Os algoritmos de assinatura também deverão ser substituídos por Sha-512 para garantir um nível de segurança aceitável a longo prazo.
